@@ -9,8 +9,8 @@ main_list =[' ', '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-'
                       'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
                         'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}', '~']
 
-def incryption():
-    incrpt = ""
+def encryption():
+    encrpt = ""
     spec = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', 'a', 's', 'd',
              'f', 'g', 'h', 'j', 'k', 'l', ';', "'", 'z', 'x', 'c', 'v', 'b', 'n', 'm',
                ',', '.', '/', '`', '=', '~', '!', '@', '#', '$', '%', '^', '&', '*', '(',
@@ -22,14 +22,14 @@ def incryption():
     lst = list(tpl)
     for i in lst:
         index = main_list.index(i)
-        incrpt += random.choice(spec) + str(index) + random.choice(spec)
-    print ("\n" + incrpt + "\n")
+        encrpt += random.choice(spec) + str(index) + random.choice(spec)
+    print ("\n" + encrpt + "\n")
     
 def decryption():
     dcrpt = ""
-    incrpt_code = input("enter your incrypted code: ")
-    incrpt_char = re.findall(r"\d+", incrpt_code)
-    incrpt_list = list(incrpt_char)
+    encrpt_code = input("enter your encrypted code: ")
+    encrpt_char = re.findall(r"\d+", encrpt_code)
+    encrpt_list = list(encrpt_char)
     for i in incrpt_list:
         inti = int(i)
         dcrpt += main_list[inti]
@@ -37,12 +37,12 @@ def decryption():
 
 is_up = 1
 while is_up == 1:
-    choise = input("enter your choise ( incrypt=1 | decrypt=2 ) : ")
+    choise = input("enter your choise ( encrypt=1 | decrypt=2 ) : ")
     if choise == "1":
-        incryption()
+        encryption()
     elif choise == "2":
         decryption()
     elif choise == "exit":
         is_up = 0
     else:
-        print ("\nerr!! choise 1 or 2 ( incrypt=1 | decrypt=2 )\n")
+        print ("\nerr!! choise 1 or 2 ( encrypt=1 | decrypt=2 )\n")
